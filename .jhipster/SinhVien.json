@@ -1,0 +1,72 @@
+{
+  "name": "SinhVien",
+  "fields": [
+    {
+      "fieldName": "maSinhVien",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "hoTen",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ngaySinh",
+      "fieldType": "LocalDate",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "gioiTinh",
+      "fieldType": "Sex",
+      "fieldValues": "Male,Female"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "soDienThoai",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nganh",
+      "fieldType": "Nganh",
+      "fieldValues": "InformationTechnology,Marketing,MultimediaCommunication",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "khoaHoc",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "lop",
+      "fieldType": "Lop",
+      "fieldValues": "D17CQCN03,D17CQCN04,D17CQCN05,D17CQCN06,D17CQCN07,D17CQCN08"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "diem",
+      "otherEntityRelationshipName": "maSinhVien",
+      "relationshipName": "diem"
+    }
+  ],
+  "entityTableName": "sinh_vien",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210517080323"
+}

@@ -1,0 +1,80 @@
+
+entity SinhVien {
+	maSinhVien String required
+    password String required
+    hoTen String required
+    ngaySinh LocalDate required
+    gioiTinh Sex
+    email String
+    soDienThoai String
+    nganh Nganh required
+    khoaHoc String required
+    lop Lop
+    
+}
+
+entity MonHoc {
+	maMonHoc String required
+    tenMonHoc String required
+    soTinChi Integer required min(1) max(4)
+    chuyenCan Double required min(0) max(0.1)
+    kiemTra Double required min(0) max(0.2)
+    thucHanh Double min(0) max(0.2)
+    baiTap Double min(0) max(0.2)
+    thi Double required min(0) max(0.7)
+}
+
+// an ignored comment
+/** not an ignored comment */
+entity Diem {
+	chuyenCan Double required min(0) max(10)
+	kiemTra Double required min(0) max(10)
+	thucHanh Double min(0) max(10)
+	baiTap Double min(0) max(10)
+    thi Double required min(0) max(10)
+    soLanHoc Integer required
+    tongKet Double required min(0) max(10)
+    tongKetThangChu String required 
+    ketQua Status
+}
+enum Nganh{
+	InformationTechnology, Marketing, MultimediaCommunication
+}
+
+enum Lop {
+	D17CQCN03, D17CQCN04, D17CQCN05, D17CQCN06, D17CQCN07, D17CQCN08
+}
+
+enum Sex {
+    Male, Female
+}
+
+enum Status {
+    PASS, NOTPASS
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	SinhVien to Diem{maSinhVien},
+	/**
+	* A relationship
+	*/
+	MonHoc to
+	/**
+	* Another side of the same relationship
+	*/
+	Diem{maMonHoc}
+}
+
+// Set pagination options
+paginate SinhVien, MonHoc, Diem with infinite-scroll
+paginate MonHoc, SinhVien, Diem with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

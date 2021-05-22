@@ -1,0 +1,34 @@
+{
+  "sqanhom16App": {
+    "sinhVien": {
+      "home": {
+        "title": "Quản lý Sinh viên",
+        "refreshListLabel": "Làm mới danh sách",
+        "createLabel": "Thêm mới một Sinh viên",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Sinh viên",
+        "notFound": "Không tìm thấy thông tin"
+      },
+      "created": "Một Sinh viên mới được tạo với định danh {{ param }}",
+      "updated": "Một Sinh viên cập nhật với định danh {{ param }}",
+      "deleted": "Một Sinh viên đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Sinh viên {{ id }}?"
+      },
+      "detail": {
+        "title": "Sinh viên"
+      },
+      "id": "ID",
+      "maSinhVien": "Mã Sinh viên",
+      "password": "Password",
+      "hoTen": "Họ và tên",
+      "ngaySinh": "Ngày sinh",
+      "gioiTinh": "Giới tính",
+      "email": "Email",
+      "soDienThoai": "Số điện thoại",
+      "nganh": "Ngàh",
+      "khoaHoc": "Khóa Hoc",
+      "lop": "Lớp",
+      "diem": "Điểm"
+    }
+  }
+}

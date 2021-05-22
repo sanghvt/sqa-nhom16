@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd">
+    <!--
+        Added the constraints for entity Diem.
+    -->
+    <changeSet id="20210517080325-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="ma_sinh_vien_id"
+                                 baseTableName="diem"
+                                 constraintName="fk_diem__ma_sinh_vien_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="sinh_vien"/>
+
+        <addForeignKeyConstraint baseColumnNames="ma_mon_hoc_id"
+                                 baseTableName="diem"
+                                 constraintName="fk_diem__ma_mon_hoc_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="mon_hoc"/>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,88 @@
+{
+  "name": "Diem",
+  "fields": [
+    {
+      "fieldName": "chuyenCan",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required", "min", "max"],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "10"
+    },
+    {
+      "fieldName": "kiemTra",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required", "min", "max"],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "10"
+    },
+    {
+      "fieldName": "thucHanh",
+      "fieldType": "Double",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "10"
+    },
+    {
+      "fieldName": "baiTap",
+      "fieldType": "Double",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "10"
+    },
+    {
+      "fieldName": "thi",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required", "min", "max"],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "10"
+    },
+    {
+      "fieldName": "soLanHoc",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "tongKet",
+      "fieldType": "Double",
+      "fieldValidateRules": ["required", "min", "max"],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "10"
+    },
+    {
+      "fieldName": "tongKetThangChu",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ketQua",
+      "fieldType": "Status",
+      "fieldValues": "PASS,NOTPASS"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "sinhVien",
+      "otherEntityRelationshipName": "diem",
+      "relationshipName": "maSinhVien"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "monHoc",
+      "otherEntityRelationshipName": "diem",
+      "javadoc": "Another side of the same relationship",
+      "relationshipName": "maMonHoc"
+    }
+  ],
+  "javadoc": "not an ignored comment",
+  "entityTableName": "diem",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210517080325"
+}

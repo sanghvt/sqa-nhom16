@@ -1,0 +1,17 @@
+/* ==========================================================================
+Main page styles
+========================================================================== */
+.home__page {
+  background: url(../../../content/images/ptit_bg.jpg);
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 5px;
+}
+.hipster {
+  display: inline-block;
+  width: 100%;
+  height: 100vh;
+  background-size: contain;
+}
