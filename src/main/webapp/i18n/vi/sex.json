@@ -2,8 +2,8 @@
   "sqanhom16App": {
     "Sex": {
       "null": "",
-      "Male": "Nam",
-      "Female": "Nữ"
+      "Male": "Male",
+      "Female": "Female"
     }
   }
 }

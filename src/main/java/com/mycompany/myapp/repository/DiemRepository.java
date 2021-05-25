@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface DiemRepository extends JpaRepository<Diem, Long> {}
+public interface DiemRepository extends JpaRepository<Diem, Long>, JpaSpecificationExecutor<Diem> {}

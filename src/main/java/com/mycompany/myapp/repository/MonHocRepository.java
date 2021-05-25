@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface MonHocRepository extends JpaRepository<MonHoc, Long> {}
+public interface MonHocRepository extends JpaRepository<MonHoc, Long>, JpaSpecificationExecutor<MonHoc> {}

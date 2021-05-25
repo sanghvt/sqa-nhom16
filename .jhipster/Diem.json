@@ -64,14 +64,16 @@
       "relationshipType": "many-to-one",
       "otherEntityName": "sinhVien",
       "otherEntityRelationshipName": "diem",
-      "relationshipName": "maSinhVien"
+      "relationshipName": "maSinhVien",
+      "otherEntityField": "maSinhVien"
     },
     {
       "relationshipType": "many-to-one",
       "otherEntityName": "monHoc",
       "otherEntityRelationshipName": "diem",
       "javadoc": "Another side of the same relationship",
-      "relationshipName": "maMonHoc"
+      "relationshipName": "maMonHoc",
+      "otherEntityField": "tenMonHoc"
     }
   ],
   "javadoc": "not an ignored comment",
@@ -79,7 +81,7 @@
   "dto": "no",
   "pagination": "pagination",
   "service": "serviceImpl",
-  "jpaMetamodelFiltering": false,
+  "jpaMetamodelFiltering": true,
   "fluentMethods": true,
   "readOnly": false,
   "embedded": false,

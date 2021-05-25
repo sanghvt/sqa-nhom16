@@ -9,4 +9,4 @@ import org.springframework.stereotype.Repository;
  */
 @SuppressWarnings("unused")
 @Repository
-public interface SinhVienRepository extends JpaRepository<SinhVien, Long> {}
+public interface SinhVienRepository extends JpaRepository<SinhVien, Long>, JpaSpecificationExecutor<SinhVien> {}

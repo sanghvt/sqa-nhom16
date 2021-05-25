@@ -2,11 +2,12 @@
   "sqanhom16App": {
     "diem": {
       "home": {
-        "title": "Quản lý điểm",
+        "title": "Điểm",
         "refreshListLabel": "Làm mới danh sách",
+        "exportReportLabel": "Xuất báo cáo",
         "createLabel": "Thêm mới một Điểm",
         "createOrEditLabel": "Thêm mới hoặc cập nhật Điểm",
-        "notFound": "Không tìm thấy thông tin"
+        "notFound": "Không có thông tin"
       },
       "created": "Một Điểm mới được tạo với định danh {{ param }}",
       "updated": "Một Điểm cập nhật với định danh {{ param }}",
@@ -18,17 +19,17 @@
         "title": "Điểm"
       },
       "id": "ID",
-      "chuyenCan": "Chuyên cần",
-      "kiemTra": "Kiểm tra",
-      "thucHanh": "Thực hành",
-      "baiTap": "Bài tập",
-      "thi": "Thi",
+      "chuyenCan": "Điểm chuyên cần",
+      "kiemTra": "Điểm kiểm tra",
+      "thucHanh": "Điểm thực hành",
+      "baiTap": "Điểm bài tập",
+      "thi": "Điểm thi",
       "soLanHoc": "Số lần học",
-      "tongKet": "Tổng kết",
-      "tongKetThangChu": "Tổng kết thang chữ",
+      "tongKet": "Điểm tổng kết",
+      "tongKetThangChu": "Điểm tổng kết thang chữ",
       "ketQua": "Kết quả",
       "maSinhVien": "Mã sinh viên",
-      "maMonHoc": "Mã môn học"
+      "maMonHoc": "Môn học"
     }
   }
 }

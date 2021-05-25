@@ -2,8 +2,8 @@
   "sqanhom16App": {
     "Status": {
       "null": "",
-      "PASS": "Đạt",
-      "NOTPASS": "Không Đạt"
+      "PASS": "PASS",
+      "NOTPASS": "NOTPASS"
     }
   }
 }

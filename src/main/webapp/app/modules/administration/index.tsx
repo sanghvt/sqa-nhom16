@@ -11,10 +11,10 @@ import Docs from './docs/docs';
 const Routes = ({ match }) => (
   <div>
     <ErrorBoundaryRoute path={`${match.url}/user-management`} component={UserManagement} />
-    <ErrorBoundaryRoute exact path={`${match.url}/health`} component={Health} />
-    <ErrorBoundaryRoute exact path={`${match.url}/metrics`} component={Metrics} />
-    <ErrorBoundaryRoute exact path={`${match.url}/configuration`} component={Configuration} />
-    <ErrorBoundaryRoute exact path={`${match.url}/logs`} component={Logs} />
+    {/*<ErrorBoundaryRoute exact path={`${match.url}/health`} component={Health} />*/}
+    {/*<ErrorBoundaryRoute exact path={`${match.url}/metrics`} component={Metrics} />*/}
+    {/*<ErrorBoundaryRoute exact path={`${match.url}/configuration`} component={Configuration} />*/}
+    {/*<ErrorBoundaryRoute exact path={`${match.url}/logs`} component={Logs} />*/}
     <ErrorBoundaryRoute exact path={`${match.url}/docs`} component={Docs} />
   </div>
 );

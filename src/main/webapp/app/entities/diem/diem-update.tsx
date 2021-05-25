@@ -245,7 +245,7 @@ export const DiemUpdate = (props: IDiemUpdateProps) => {
                   {sinhViens
                     ? sinhViens.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.maSinhVien}
                         </option>
                       ))
                     : null}
@@ -260,7 +260,7 @@ export const DiemUpdate = (props: IDiemUpdateProps) => {
                   {monHocs
                     ? monHocs.map(otherEntity => (
                         <option value={otherEntity.id} key={otherEntity.id}>
-                          {otherEntity.id}
+                          {otherEntity.tenMonHoc}
                         </option>
                       ))
                     : null}

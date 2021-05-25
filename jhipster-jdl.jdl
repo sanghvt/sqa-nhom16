@@ -1,6 +1,6 @@
 
 entity SinhVien {
-	maSinhVien String required
+	maSinhVien String unique
     password String required
     hoTen String required
     ngaySinh LocalDate required
@@ -10,11 +10,11 @@ entity SinhVien {
     nganh Nganh required
     khoaHoc String required
     lop Lop
-    
+
 }
 
 entity MonHoc {
-	maMonHoc String required
+	maMonHoc String unique
     tenMonHoc String required
     soTinChi Integer required min(1) max(4)
     chuyenCan Double required min(0) max(0.1)
@@ -34,7 +34,7 @@ entity Diem {
     thi Double required min(0) max(10)
     soLanHoc Integer required
     tongKet Double required min(0) max(10)
-    tongKetThangChu String required 
+    tongKetThangChu String required
     ketQua Status
 }
 enum Nganh{
@@ -55,7 +55,7 @@ enum Status {
 
 // defining multiple OneToMany relationships with comments
 relationship OneToMany {
-	SinhVien to Diem{maSinhVien},
+	SinhVien to Diem{maSinhVien(maSinhVien)},
 	/**
 	* A relationship
 	*/
@@ -63,7 +63,7 @@ relationship OneToMany {
 	/**
 	* Another side of the same relationship
 	*/
-	Diem{maMonHoc}
+	Diem{maMonHoc(tenMonHoc)}
 }
 
 // Set pagination options
@@ -72,7 +72,7 @@ paginate MonHoc, SinhVien, Diem with pagination
 
 // Use Data Transfer Objects (DTO)
 // dto * with mapstruct
-
+filter *
 // Set service options to all except few
 service all with serviceImpl
 

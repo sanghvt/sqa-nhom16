@@ -39,6 +39,8 @@
       "username.label": "Tên tài khoản",
       "username.placeholder": "Nhập tên tài khoản của bạn",
       "newpassword.label": "Mật khẩu mới",
+      "currentpassword.label": " Mật khẩu cũ",
+      "currentpassword.placeholder": " Mật khẩu cũ",
       "newpassword.placeholder": "Nhập mật khẩu mới",
       "confirmpassword.label": "Xác nhận mật khẩu mới",
       "confirmpassword.placeholder": "Nhập lại mật khẩu mới",
@@ -137,5 +139,5 @@
       "not.image": "File was expected to be an image but was found to be \"{{ fileType }}\""
     }
   },
-  "footer": "Hà Đông - Hà Nội"
+  "footer": "Học viên Công nghệ bưu chính viễn thông - Hà Đông - Hà Nội"
 }

@@ -2,33 +2,33 @@
   "sqanhom16App": {
     "sinhVien": {
       "home": {
-        "title": "Quản lý Sinh viên",
+        "title": "Sinh Viên",
         "refreshListLabel": "Làm mới danh sách",
-        "createLabel": "Thêm mới một Sinh viên",
-        "createOrEditLabel": "Thêm mới hoặc cập nhật Sinh viên",
+        "createLabel": "Thêm mới một Sinh Viên",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Sinh Viên",
         "notFound": "Không tìm thấy thông tin"
       },
-      "created": "Một Sinh viên mới được tạo với định danh {{ param }}",
-      "updated": "Một Sinh viên cập nhật với định danh {{ param }}",
-      "deleted": "Một Sinh viên đã xóa với định danh {{ param }}",
+      "created": "Một Sinh Viên mới được tạo với định danh {{ param }}",
+      "updated": "Một Sinh Viên cập nhật với định danh {{ param }}",
+      "deleted": "Một Sinh Viên đã xóa với định danh {{ param }}",
       "delete": {
-        "question": "Bạn có chắc là muốn xóa Sinh viên {{ id }}?"
+        "question": "Bạn có chắc là muốn xóa Sinh Viên có định danh {{ id }}?"
       },
       "detail": {
-        "title": "Sinh viên"
+        "title": "Sinh Viên"
       },
       "id": "ID",
-      "maSinhVien": "Mã Sinh viên",
+      "maSinhVien": "Mã Sinh Viên",
       "password": "Password",
       "hoTen": "Họ và tên",
       "ngaySinh": "Ngày sinh",
       "gioiTinh": "Giới tính",
       "email": "Email",
-      "soDienThoai": "Số điện thoại",
-      "nganh": "Ngàh",
-      "khoaHoc": "Khóa Hoc",
+      "soDienThoai": "Số điện thọai",
+      "nganh": "Ngành học",
+      "khoaHoc": "Khóa học",
       "lop": "Lớp",
-      "diem": "Điểm"
+      "diem": "Diem"
     }
   }
 }

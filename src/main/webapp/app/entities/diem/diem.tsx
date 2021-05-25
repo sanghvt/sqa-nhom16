@@ -74,6 +74,9 @@ export const Diem = (props: IDiemProps) => {
       <h2 id="diem-heading" data-cy="DiemHeading">
         <Translate contentKey="sqanhom16App.diem.home.title">Diems</Translate>
         <div className="d-flex justify-content-end">
+          <Button className="mr-2" color="danger">
+            <Translate contentKey="sqanhom16App.diem.home.exportReportLabel">Export Report</Translate>
+          </Button>
           <Button className="mr-2" color="info" onClick={handleSyncList} disabled={loading}>
             <FontAwesomeIcon icon="sync" spin={loading} />{' '}
             <Translate contentKey="sqanhom16App.diem.home.refreshListLabel">Refresh List</Translate>
@@ -148,8 +151,8 @@ export const Diem = (props: IDiemProps) => {
                   <td>
                     <Translate contentKey={`sqanhom16App.Status.${diem.ketQua}`} />
                   </td>
-                  <td>{diem.maSinhVien ? <Link to={`sinh-vien/${diem.maSinhVien.id}`}>{diem.maSinhVien.id}</Link> : ''}</td>
-                  <td>{diem.maMonHoc ? <Link to={`mon-hoc/${diem.maMonHoc.id}`}>{diem.maMonHoc.id}</Link> : ''}</td>
+                  <td>{diem.maSinhVien ? <Link to={`sinh-vien/${diem.maSinhVien.id}`}>{diem.maSinhVien.maSinhVien}</Link> : ''}</td>
+                  <td>{diem.maMonHoc ? <Link to={`mon-hoc/${diem.maMonHoc.id}`}>{diem.maMonHoc.tenMonHoc}</Link> : ''}</td>
                   <td className="text-right">
                     <div className="btn-group flex-btn-group-container">
                       <Button tag={Link} to={`${match.url}/${diem.id}`} color="info" size="sm" data-cy="entityDetailsButton">

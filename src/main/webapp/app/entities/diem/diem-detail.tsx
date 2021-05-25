@@ -87,11 +87,11 @@ export const DiemDetail = (props: IDiemDetailProps) => {
           <dt>
             <Translate contentKey="sqanhom16App.diem.maSinhVien">Ma Sinh Vien</Translate>
           </dt>
-          <dd>{diemEntity.maSinhVien ? diemEntity.maSinhVien.id : ''}</dd>
+          <dd>{diemEntity.maSinhVien ? diemEntity.maSinhVien.maSinhVien : ''}</dd>
           <dt>
             <Translate contentKey="sqanhom16App.diem.maMonHoc">Ma Mon Hoc</Translate>
           </dt>
-          <dd>{diemEntity.maMonHoc ? diemEntity.maMonHoc.id : ''}</dd>
+          <dd>{diemEntity.maMonHoc ? diemEntity.maMonHoc.tenMonHoc : ''}</dd>
         </dl>
         <Button tag={Link} to="/diem" replace color="info" data-cy="entityDetailsBackButton">
           <FontAwesomeIcon icon="arrow-left" />{' '}

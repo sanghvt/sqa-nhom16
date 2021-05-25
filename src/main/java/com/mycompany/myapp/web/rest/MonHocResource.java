@@ -2,7 +2,9 @@ package com.mycompany.myapp.web.rest;
 
 import com.mycompany.myapp.domain.MonHoc;
 import com.mycompany.myapp.repository.MonHocRepository;
+import com.mycompany.myapp.service.MonHocQueryService;
 import com.mycompany.myapp.service.MonHocService;
+import com.mycompany.myapp.service.criteria.MonHocCriteria;
 import com.mycompany.myapp.web.rest.errors.BadRequestAlertException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -43,9 +45,12 @@ public class MonHocResource {
 
     private final MonHocRepository monHocRepository;
 
-    public MonHocResource(MonHocService monHocService, MonHocRepository monHocRepository) {
+    private final MonHocQueryService monHocQueryService;
+
+    public MonHocResource(MonHocService monHocService, MonHocRepository monHocRepository, MonHocQueryService monHocQueryService) {
         this.monHocService = monHocService;
         this.monHocRepository = monHocRepository;
+        this.monHocQueryService = monHocQueryService;
     }
 
     /**
@@ -142,14 +147,27 @@ public class MonHocResource {
      * {@code GET  /mon-hocs} : get all the monHocs.
      *
      * @param pageable the pagination information.
+     * @param criteria the criteria which the requested entities should match.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of monHocs in body.
      */
     @GetMapping("/mon-hocs")
-    public ResponseEntity<List<MonHoc>> getAllMonHocs(Pageable pageable) {
-        log.debug("REST request to get a page of MonHocs");
-        Page<MonHoc> page = monHocService.findAll(pageable);
+    public ResponseEntity<List<MonHoc>> getAllMonHocs(MonHocCriteria criteria, Pageable pageable) {
+        log.debug("REST request to get MonHocs by criteria: {}", criteria);
+        Page<MonHoc> page = monHocQueryService.findByCriteria(criteria, pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    /**
+     * {@code GET  /mon-hocs/count} : count all the monHocs.
+     *
+     * @param criteria the criteria which the requested entities should match.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count in body.
+     */
+    @GetMapping("/mon-hocs/count")
+    public ResponseEntity<Long> countMonHocs(MonHocCriteria criteria) {
+        log.debug("REST request to count MonHocs by criteria: {}", criteria);
+        return ResponseEntity.ok().body(monHocQueryService.countByCriteria(criteria));
     }
 
     /**

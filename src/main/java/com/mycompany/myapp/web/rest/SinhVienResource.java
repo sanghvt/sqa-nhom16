@@ -2,7 +2,9 @@ package com.mycompany.myapp.web.rest;
 
 import com.mycompany.myapp.domain.SinhVien;
 import com.mycompany.myapp.repository.SinhVienRepository;
+import com.mycompany.myapp.service.SinhVienQueryService;
 import com.mycompany.myapp.service.SinhVienService;
+import com.mycompany.myapp.service.criteria.SinhVienCriteria;
 import com.mycompany.myapp.web.rest.errors.BadRequestAlertException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -43,9 +45,16 @@ public class SinhVienResource {
 
     private final SinhVienRepository sinhVienRepository;
 
-    public SinhVienResource(SinhVienService sinhVienService, SinhVienRepository sinhVienRepository) {
+    private final SinhVienQueryService sinhVienQueryService;
+
+    public SinhVienResource(
+        SinhVienService sinhVienService,
+        SinhVienRepository sinhVienRepository,
+        SinhVienQueryService sinhVienQueryService
+    ) {
         this.sinhVienService = sinhVienService;
         this.sinhVienRepository = sinhVienRepository;
+        this.sinhVienQueryService = sinhVienQueryService;
     }
 
     /**
@@ -142,14 +151,27 @@ public class SinhVienResource {
      * {@code GET  /sinh-viens} : get all the sinhViens.
      *
      * @param pageable the pagination information.
+     * @param criteria the criteria which the requested entities should match.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of sinhViens in body.
      */
     @GetMapping("/sinh-viens")
-    public ResponseEntity<List<SinhVien>> getAllSinhViens(Pageable pageable) {
-        log.debug("REST request to get a page of SinhViens");
-        Page<SinhVien> page = sinhVienService.findAll(pageable);
+    public ResponseEntity<List<SinhVien>> getAllSinhViens(SinhVienCriteria criteria, Pageable pageable) {
+        log.debug("REST request to get SinhViens by criteria: {}", criteria);
+        Page<SinhVien> page = sinhVienQueryService.findByCriteria(criteria, pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    /**
+     * {@code GET  /sinh-viens/count} : count all the sinhViens.
+     *
+     * @param criteria the criteria which the requested entities should match.
+     * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the count in body.
+     */
+    @GetMapping("/sinh-viens/count")
+    public ResponseEntity<Long> countSinhViens(SinhVienCriteria criteria) {
+        log.debug("REST request to count SinhViens by criteria: {}", criteria);
+        return ResponseEntity.ok().body(sinhVienQueryService.countByCriteria(criteria));
     }
 
     /**
